@@ -1,0 +1,7 @@
+myblockchain-entities/target
+myblockchain-app/target
+myblockchain-vo/target
+*/.classpath
+*/.project
+*.factorypath
+*/.settings
