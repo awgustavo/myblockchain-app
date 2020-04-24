@@ -11,10 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BlockVO extends BaseVO {
-   
-    private double value;
+
+    private static final long serialVersionUID = -3127341978200065062L;
+    
     private String hash;
     private String previousHash;
+    private Long dificulty;
     private TransactionVO transaction;
 
 }

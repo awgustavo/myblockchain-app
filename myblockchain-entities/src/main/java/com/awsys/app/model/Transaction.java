@@ -1,15 +1,25 @@
 package com.awsys.app.model;
 
 import com.awsys.app.base.BaseEntity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
 import javax.persistence.FetchType;
 import java.sql.Timestamp;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Transaction extends BaseEntity {
    
+    private static final long serialVersionUID = -5098893550230249125L;
+
     private Double amount;
     
    // private Long blockUserPayerId;

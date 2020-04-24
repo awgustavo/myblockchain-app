@@ -5,9 +5,9 @@ spring:
   # Database
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/myblockchain_dev
+    url: jdbc:postgresql://192.168.0.11:5431/myblockchain_dev
     username: postgres
-    password: postgres
+    password: 123456
   # JPA properties
   jpa:
     hibernate:

@@ -7,23 +7,24 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.http.HttpStatus;
 
 public class BaseRoute<Entity, VO> { 
 
     //@Autowired
-    private CrudRepository<Entity, Long> dao;
+    private PagingAndSortingRepository<Entity, Long> dao;
     private BaseBusiness<Entity, VO> business;
 
-    public BaseRoute(CrudRepository<Entity, Long>  dao, BaseBusiness<Entity, VO> business){
+    public BaseRoute(PagingAndSortingRepository<Entity, Long>  dao, BaseBusiness<Entity, VO> business){
         this.dao = dao;
         this.business = business;
     }
 
     @GetMapping(path="/")
-    public ResponseEntity<?>  getAllFilter() {
-        return new ResponseEntity(dao.findAll(), HttpStatus.OK);
+    public ResponseEntity<?>  getAllFilter(Pageable page) {
+        return new ResponseEntity(dao.findAll(page), HttpStatus.OK);
     }
 
     @GetMapping(path="/{id}")

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("block")
-public class BlockRoute extends BaseRoute<Block, BlockVO>{ 
+public class BlockRoute extends BaseRoute<Block, BlockVO> { 
 
     public BlockRoute(BlockDAO dao, BlockBusiness blockBusiness) {
         super(dao, blockBusiness);

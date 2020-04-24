@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TransactionVO extends BaseVO {
    
+    private static final long serialVersionUID = -4994342827311504094L;
     private Double amount;
     private BlockUserVO blockUserPayer;
     private BlockUserVO blockUserReceiver;

@@ -1,11 +1,6 @@
 package com.awsys.app.base;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.data.repository.CrudRepository;
-import java.util.ArrayList;
-import java.lang.Iterable;
-import java.util.List;
-import java.util.Optional;
 
 public abstract class BaseBusiness<Entity, VO> { 
 
@@ -20,9 +15,13 @@ public abstract class BaseBusiness<Entity, VO> {
 
     public abstract VO toVO(Entity entity);
 
-    public abstract VO beforePersist(VO vo);
+    public VO beforePersist(VO vo) {
+        return vo;
+    }
 
-    public abstract VO beforeReturn(VO vo);
+    public VO beforeReturn(VO vo) {
+        return vo;
+    }
 
     public Entity mapEntity(VO obj, Class cls) {
         return (Entity)this.modelMapper.map(obj, cls);
